@@ -4,6 +4,7 @@ This playbook turns an **Ubuntu 22.04** VM into a **bastion** that accepts SSH l
 
 > **Note:** OpenVPN is **not** installed here; you can add it later in the same host.
 
+> **Note:** A modified version of the module had been used, check [`pam_oauth2_device`](https://github.com/riccardocaccia/pam_oauth2_device)
 ---
 
 ## What this playbook does
