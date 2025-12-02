@@ -180,7 +180,7 @@ EOT
 
 # variables value
 
-> **NOTE:** is important to not commit this file, it contains sensible data! 
+> **NOTE:** do not commit this file, it contains sensible data! 
 
   ```
   auth_url      = "AUTHENTICATOR-URL"
@@ -194,7 +194,6 @@ EOT
   image          = "Ubuntu 22.04"
   ```
 
-  so SSH logins go through OIDC device flow (and *don’t* fall back to local passwords).
 * The `im` user is created for automation (e.g. Terraform/IM). If you provided `jump_user_pubkey`, it will be authorized in `~im/.ssh/authorized_keys`.
 * Re-running the playbook is **idempotent**.
 
