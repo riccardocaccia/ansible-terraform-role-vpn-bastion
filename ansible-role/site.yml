@@ -17,6 +17,11 @@
         state: restarted
 
   tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
     # Build/runtime deps needed to compile the PAM module
     - name: Install build and runtime dependencies
       apt:
@@ -91,7 +96,7 @@
 
     - name: Ensure pam_oauth2_device line is before common-auth and marked sufficient
       blockinfile:
-        path: "{{ pam_sshd_file }}"            
+        path: "{{ pam_sshd_file }}"
         marker: "# {mark} OIDC PAM"
         insertbefore: '^[#]?\s*@include\s+common-auth'
         block: |
