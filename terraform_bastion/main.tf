@@ -1,6 +1,16 @@
 # ---------------------------------
 # Provider = OpenStack
 # ---------------------------------
+terraform {
+  required_version = ">= 1.4.0"
+  required_providers {
+	openstack = {
+  	source  = "terraform-provider-openstack/openstack"
+  	version = "~> 1.53.0"
+	}
+  }
+}
+
 provider "openstack" {
   auth_url    = var.auth_url
   user_name   = var.user_name
@@ -21,7 +31,7 @@ resource "openstack_compute_keypair_v2" "bastion_key" {
 # Network
 # ---------------------------------
 
-# private network
+# Private network
 resource "openstack_networking_network_v2" "private" {
   name = "bastion-private"
 }
@@ -33,7 +43,7 @@ resource "openstack_networking_subnet_v2" "private_subnet" {
   ip_version = 4
 }
 
-# Public network
+# public network
 data "openstack_networking_network_v2" "public" {
   name = var.public_network
 }
@@ -69,7 +79,7 @@ resource "local_file" "inventory" {
   filename = "${path.module}/../ansible-role-vpn-bastion/inventory"
   content  = <<EOF
 [bastion]
-bastion1 ansible_host=${openstack_compute_instance_v2.bastion.access_ip_v4} ansible_user=ubuntu
+bastion1 ansible_host=${openstack_compute_instance_v2.bastion.access_ip_v4} ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/my_private
 EOF
 }
 
