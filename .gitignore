@@ -1,8 +1,9 @@
+# Terraform 
 main.tf.save    
 terraform.tfstate.backup  
 *.tfstate
 *.hcl
-.terraform/providers/registry.terraform.io
+
 # Ansible Vault password file must never be committed
 .vault_pass.txt
 
