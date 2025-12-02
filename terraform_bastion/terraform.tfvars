@@ -1,10 +1,12 @@
 # DO NOT COMMIT THIS FILE
-auth_url      = "authentication_url"
-user_name     = "my_user"
-password      = "my_super_secret_password"
-tenant_name   = "name"
-region        = "region_name"
+auth_url      = "AUTHENTICATOR-URL"
+user_name     = "NAME-OF-THE-USER"
+password      = "SUPER-SECRET-PASSWORD"
+tenant_name   = "TENANT OR PROJECT NAME"
+region        = "RegionOne"
 
 public_network = "public"
-flavor         = "desired_flavour"
+flavor         = "DESIRED FLAVOUR"
 image          = "Ubuntu 22.04"
+
+
