@@ -1,0 +1,3 @@
+[submodule "ansible_role"]
+	path = ansible_role
+	url = https://github.com/Laniakea-elixir-it/ansible-role-vpn-bastion.git
